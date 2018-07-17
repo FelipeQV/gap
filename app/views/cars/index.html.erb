@@ -5,7 +5,14 @@
 <h1>Tu garage</h1>
 
 <% @cars.each do |car| %>
-  <%= car.maker + " " + car.model %>
+
+
+  <%= link_to car.maker, car_path(car) %>
+
+
+
   <% end %>
+
+<%= link_to "agregar nuevo auto", new_user_car_path(current_user) %>
 
 <%= link_to "atras", root_path %>

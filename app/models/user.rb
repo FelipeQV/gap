@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :cars, dependent: :destroy
+         has_many :appointments, through: :cars
 end
