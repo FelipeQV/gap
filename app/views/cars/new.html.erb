@@ -1,0 +1,16 @@
+<h1>Cars#new</h1>
+<p>Find me in app/views/cars/new.html.erb</p>
+
+
+<h1>Información de tu vehículo </h1>
+
+<%= simple_form_for [@user, @car] do |car| %>
+
+<% car.error_notification  %>
+<%= car.input :maker %>
+<%= car.input :model%>
+<%= car.input :year%>
+<%= car.input :plate%>
+<%= car.button :submit  %>
+
+  <% end %>
