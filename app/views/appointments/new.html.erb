@@ -1,9 +1,9 @@
 <h1>Appointments#new</h1>
 <p>Find me in app/views/appointments/new.html.erb</p>
 
-<%= simple_form_for @appointment do |f| %>
+<%= simple_form_for car_appointments_path do |f| %>
 <% f.error_notification %>
-<%= f.input :date, :as => :string, :input_html: {id: "datetimepicker12"} %>
+
 <%= f.input :description %>
 <%= f.button :submit %>
 <%end%>

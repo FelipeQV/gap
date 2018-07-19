@@ -1,2 +1,11 @@
 <h1>Cars#show</h1>
 <p>Find me in app/views/cars/show.html.erb</p>
+
+
+<%= simple_form_for [@car, @appointment] do |a| %>
+
+<%= a.input :date %>
+
+<%= a.button :submit  %>
+
+  <% end %>

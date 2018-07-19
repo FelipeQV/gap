@@ -20,6 +20,10 @@ class CarsController < ApplicationController
   end
 
   def show
+    @car = Car.find(params[:id])
+    @appointment = Appointment.new(appointment_params)
+    @appointment.car = @car
+
   end
 
   def edit
@@ -39,5 +43,9 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit!
+  end
+
+  def appointment_params
+  #  params.require(:appointment).permit!
   end
 end

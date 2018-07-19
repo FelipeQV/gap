@@ -4,16 +4,22 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @car.id = Car.find(params[:car_id])
+    @car = Car.find(params[:car_id])
+    @appointment = Appointment.new
+    @appointment.car = @car
+
+
+
   end
 
   def create
+
+    @car = Car.find(params[:car_id])
     @appointment = Appointment.new(appointment_params)
-    @car = Car.find(params[car_id:])
     @appointment.car = @car
-    @appointment.date = DateTime.strptime([:appointment][:date], "%m/%d/%y %1:%M %p")
-    if @appointment.save
+  if @appointment.save
       flash[:notice] = "tu cita fue guardada existosamente"
+      redirect_to root_path
     else
       render :new
     end
