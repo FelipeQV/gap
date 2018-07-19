@@ -5,7 +5,8 @@
 <%= simple_form_for [@car, @appointment] do |a| %>
 
 <%= a.input :date %>
-
+<%= a.input :description, label: "descripción" %>
+<%= a.input :location, label: "ubicación" %>
 <%= a.button :submit  %>
 
   <% end %>
