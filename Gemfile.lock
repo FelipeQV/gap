@@ -42,7 +42,13 @@ GEM
     autoprefixer-rails (8.6.5)
       execjs
     bcrypt (3.1.12)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     bindex (0.5.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -51,6 +57,7 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    debug_inspector (0.0.3)
     devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -62,13 +69,14 @@ GEM
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
     erubi (1.7.1)
+    erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.25)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
+    geocoder (1.4.4)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    high_voltage (3.1.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -193,11 +201,13 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  better_errors
+  binding_of_caller
   bootstrap-sass (~> 3.3)
   devise
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
-  high_voltage (~> 3.1)
+  geocoder
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   pg (~> 0.21)
