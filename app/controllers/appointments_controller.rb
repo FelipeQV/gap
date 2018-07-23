@@ -1,15 +1,14 @@
 class AppointmentsController < ApplicationController
+
   def index
-    @appointments = Appointment.where(car.id.user.id = current_user.id)
-  end
+     @appointments = Appointment.where.not(latitude: nil, longitude: nil)
 
-  def new
-    @car = Car.find(params[:car_id])
-    @appointment = Appointment.new
-    @appointment.car = @car
-
-
-
+    @markers = @appointments.map do |a|
+      {
+        lat: a.latitude,
+        lng: a.longitude
+      }
+    end
   end
 
   def create
