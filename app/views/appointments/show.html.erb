@@ -1,2 +1,22 @@
 <h1>Appointments#show</h1>
 <p>Find me in app/views/appointments/show.html.erb</p>
+
+
+</br>
+<%=p @markers %>
+</br>
+
+
+<%= @appointment.location %>
+</br>
+<%= @appointment.latitude%>. <%= @appointment.longitude%>
+</br>
+
+
+
+  <div
+  id="map"
+  style="width: 50%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>

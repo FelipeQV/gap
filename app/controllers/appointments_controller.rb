@@ -2,14 +2,15 @@ class AppointmentsController < ApplicationController
 
   def index
      @appointments = Appointment.where.not(latitude: nil, longitude: nil)
-
     @markers = @appointments.map do |a|
       {
         lat: a.latitude,
         lng: a.longitude
       }
+
     end
   end
+
 
   def create
 
@@ -18,13 +19,21 @@ class AppointmentsController < ApplicationController
     @appointment.car = @car
   if @appointment.save
       flash[:notice] = "tu cita fue guardada existosamente"
-      redirect_to root_path
+      redirect_to appointment_path(@appointment)
     else
       render :new
     end
   end
 
   def show
+    @appointment = Appointment.find(params[:id])
+    @markers_hash =
+      {
+        lat: @appointment.latitude,
+        lng: @appointment.longitude
+      }
+     @markers = []
+     @markers << @markers_hash
   end
 
   def edit
