@@ -17,6 +17,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem "coffee-rails"
+gem "gmaps4rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
